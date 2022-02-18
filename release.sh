@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
+git config --global url.org-32199913@github.com:.insteadOf "https://github.com/improbable"
 export GOPRIVATE="github.com/improbable/*"
 
 # prepare binary_name/release_tag/release_asset_name
