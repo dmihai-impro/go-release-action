@@ -1,5 +1,13 @@
 #!/bin/bash -eux
 
+# prepare SSH key for accessing internal IO repos
+echo "${INPUT_TFCD_SSH_ACCESS}" > ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa
+
+git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
+export GOPRIVATE="github.com/improbable/*"
+
 # prepare binary_name/release_tag/release_asset_name
 BINARY_NAME=$(basename ${GITHUB_REPOSITORY})
 if [ x${INPUT_BINARY_NAME} != x ]; then
