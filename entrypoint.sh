@@ -1,7 +1,5 @@
 #!/bin/bash -eux
 
-pwd
-
 # prepare golang
 source /setup-go.sh 
 

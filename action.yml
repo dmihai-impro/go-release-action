@@ -71,6 +71,14 @@ inputs:
     description: 'Customize asset name if do not want to use the default format.'
     required: false
     default: ''
+  tfcd_ssh_access:
+    description: 'SSH key for accessing other internal IO repos.'
+    required: false
+    default: ''
+  known_hosts:
+    description: 'Content of the .ssh/known_host file.'
+    required: false
+    default: ''
 
 runs:
   using: 'docker'
@@ -93,6 +101,8 @@ runs:
     - ${{ inputs.release_tag }}
     - ${{ inputs.overwrite }}
     - ${{ inputs.asset_name }}
+    - ${{ inputs.tfcd_ssh_access }}
+    - ${{ inputs.known_hosts }}
 
 branding:
   icon: 'package'  
