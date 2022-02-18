@@ -1,12 +1,5 @@
 #!/bin/bash -eux
 
-# prepare SSH key for accessing internal IO repos
-mkdir ~/.ssh
-# echo "${INPUT_TFCD_SSH_ACCESS}" > ~/.ssh/id_rsa
-echo "${INPUT_GITHUB_TOKEN}" > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-ssh-add ~/.ssh/id_rsa
-
 git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
 export GOPRIVATE="github.com/improbable/*"
 
