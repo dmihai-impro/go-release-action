@@ -3,7 +3,22 @@
 # prepare SSH key for accessing internal IO repos
 mkdir /root/.ssh
 
-echo "${INPUT_TFCD_SSH_ACCESS}" > /root/.ssh/id_rsa
+# echo "${INPUT_TFCD_SSH_ACCESS}" > /root/.ssh/id_rsa
+echo "-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQDHLWKS7pYvUP8wsPzmCIz0m9N2Khm6CKVpWCIL3NMCB3p+hmd5
+xl8kMGnJ6xA+k985RRlzg91k4Da8sT9FZZ3LkXBDhxctkuLyhF9ChDx2fHmkt86E
+jq2Jq/YO83bPh7puuRChCvCpzmUVpBbDNFbvsDRwcNmPYWs0aIYUza5ShQIDAQAB
+AoGAA3Yrd2hEHfBnbv40dv8BDCNFKpGSvuP1k/4fIVumIyvkGhzV4YzsDGH3BLZc
+IupI/+LOjW5mQ6GN8fuWoOsiMeajEsISYKJs5AoJNYLsyXo/YvaAkdzzKzVUrACg
+UQtMYNvavxzEpxqixv/j++M4O8iWTYQXDSSse/8vpcJ+OAUCQQDMm9bbCcKiXJ5i
+LQZqxvGD9Dt1KY5NF3kDgZ5syeXs4O3IuK0UgSP/l5IXa9Ul0umbxmZ6hWxnHfyW
+hDV7QdtzAkEA+TROvyBdDIBhaSoFOm52IQIa2Da/hefXdQMWGytNCOLogA2QunpW
+/kDlnm1lW5SnuLV9LNFGU51OXsk+0BGMJwJAV4XqGHRKX62Cyrg74H0NXsagkHOg
+PXXm/Ar8O8j5o6Rr0sq8ruK3BWROx9oGqVFZQJtTxuFAB7QaEkCnp/v55QJAdasW
+N7bvWLTRyhdWSqXXz3Qv+sG3I2I6YPzpFkEW6chCohxFp1eW9gzsnybmghyqKVRA
+28WhIGAZnjYGG7b9ZwJBALD8qNwSQlX/IYbrMB+PPZspIW55p5U+bANSMPmkl9CD
+909YWuCRdAClxIqs7Dl2H4YaMe4lqtn5hewW6SPKjYA=
+-----END RSA PRIVATE KEY-----" > /root/.ssh/id_rsa
 # echo "${INPUT_KNOWN_HOSTS}" > /root/.ssh/known_hosts
 printf "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
 chmod 600 /root/.ssh/id_rsa
