@@ -1,12 +1,13 @@
 #!/bin/bash -eux
 
 # prepare SSH key for accessing internal IO repos
-mkdir ~/.ssh
-echo "${INPUT_TFCD_SSH_ACCESS}" > ~/.ssh/id_rsa
-echo "${INPUT_KNOWN_HOSTS}" > ~/.ssh/known_hosts
-printf "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-chmod 600 ~/.ssh/id_rsa
-# ssh-add ~/.ssh/id_rsa
+mkdir $HOME/.ssh
+
+echo "${INPUT_TFCD_SSH_ACCESS}" > $HOME/.ssh/id_rsa
+echo "${INPUT_KNOWN_HOSTS}" > $HOME/.ssh/known_hosts
+printf "Host *\n\tStrictHostKeyChecking no\n" > $HOME/.ssh/config
+chmod 600 $HOME/.ssh/id_rsa
+# ssh-add $HOME/.ssh/id_rsa
 
 git config --global url.org-32199913@github.com:.insteadOf "https://github.com/improbable"
 export GOPRIVATE="github.com/improbable/*"
