@@ -1,12 +1,12 @@
 #!/bin/bash -eux
 
 # prepare SSH key for accessing internal IO repos
-mkdir $HOME/.ssh
+mkdir /root/.ssh
 
-echo "${INPUT_TFCD_SSH_ACCESS}" > $HOME/.ssh/id_rsa
-echo "${INPUT_KNOWN_HOSTS}" > $HOME/.ssh/known_hosts
-printf "Host *\n\tStrictHostKeyChecking no\n" > $HOME/.ssh/config
-chmod 600 $HOME/.ssh/id_rsa
+echo "${INPUT_TFCD_SSH_ACCESS}" > /root/.ssh/id_rsa
+echo "${INPUT_KNOWN_HOSTS}" > /root/.ssh/known_hosts
+printf "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
+chmod 600 /root/.ssh/id_rsa
 # ssh-add $HOME/.ssh/id_rsa
 
 export SSH_COMMAND="ssh"
