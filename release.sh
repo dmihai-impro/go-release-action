@@ -5,13 +5,13 @@ mkdir /root/.ssh
 
 echo "${INPUT_TFCD_SSH_ACCESS}" > /root/.ssh/id_rsa
 echo "${INPUT_KNOWN_HOSTS}" > /root/.ssh/known_hosts
-printf "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
+# printf "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
 chmod 600 /root/.ssh/id_rsa
 # ssh-add $HOME/.ssh/id_rsa
 
-export SSH_COMMAND="ssh"
+# export SSH_COMMAND="ssh"
 # eval "${SSH_COMMAND} -o 'VerifyHostKeyDNS no' -G git@github.com"
-eval "${SSH_COMMAND} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v git@github.com"
+# eval "${SSH_COMMAND} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v git@github.com"
 
 git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
 export GOPRIVATE="github.com/improbable/*"
