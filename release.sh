@@ -11,7 +11,7 @@ chmod 600 $HOME/.ssh/id_rsa
 
 export SSH_COMMAND="ssh"
 # eval "${SSH_COMMAND} -o 'VerifyHostKeyDNS no' -G git@github.com"
-eval "${SSH_COMMAND} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null git@github.com"
+eval "${SSH_COMMAND} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v git@github.com"
 
 git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
 export GOPRIVATE="github.com/improbable/*"
