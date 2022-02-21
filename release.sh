@@ -29,7 +29,7 @@ chmod 600 /root/.ssh/id_rsa
 # eval "${SSH_COMMAND} -o 'VerifyHostKeyDNS no' -G git@github.com"
 # eval "${SSH_COMMAND} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v git@github.com"
 
-git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
+git config --global url.git@github.com:.insteadOf https://github.com/
 export GOPRIVATE="github.com/improbable/*"
 
 # prepare binary_name/release_tag/release_asset_name
