@@ -9,7 +9,7 @@ printf "Host *\n\tStrictHostKeyChecking no\n" > $HOME/.ssh/config
 chmod 600 $HOME/.ssh/id_rsa
 # ssh-add $HOME/.ssh/id_rsa
 
-git config --global url.org-32199913@github.com:.insteadOf "https://github.com/improbable"
+git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
 export GOPRIVATE="github.com/improbable/*"
 
 # prepare binary_name/release_tag/release_asset_name
