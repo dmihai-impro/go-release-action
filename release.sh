@@ -4,8 +4,8 @@
 mkdir /root/.ssh
 
 echo "${INPUT_TFCD_SSH_ACCESS}" > /root/.ssh/id_rsa
-echo "${INPUT_KNOWN_HOSTS}" > /root/.ssh/known_hosts
-# printf "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
+# echo "${INPUT_KNOWN_HOSTS}" > /root/.ssh/known_hosts
+printf "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
 chmod 600 /root/.ssh/id_rsa
 # ssh-add $HOME/.ssh/id_rsa
 
