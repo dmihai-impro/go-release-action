@@ -9,10 +9,9 @@ printf "Host *\n\tStrictHostKeyChecking no\n" > $HOME/.ssh/config
 chmod 600 $HOME/.ssh/id_rsa
 # ssh-add $HOME/.ssh/id_rsa
 
-ssh -G git@github.com
-
-export CONFIG_COMMAND="ssh -G"
-eval ${CONFIG_COMMAND} git@github.com
+export SSH_COMMAND="ssh"
+eval ${SSH_COMMAND} -G git@github.com
+eval ${SSH_COMMAND} git@github.com
 
 git config --global url.git@github.com:.insteadOf "https://github.com/improbable"
 export GOPRIVATE="github.com/improbable/*"
